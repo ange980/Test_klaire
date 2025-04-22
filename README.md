@@ -17,9 +17,11 @@ Développée avec **NestJS**, **TypeORM (SQLite)**, et entièrement **Dockerisé
 
 - Docker & Docker Compose installés
 
-### ▶️ Démarrage en 2 commandes
+### ▶️ Démarrage en 4 commandes
 
 ```bash
+git clone https://github.com/ange980/Test_klaire.git
+cd Test_klaire
 docker compose build
 docker compose up
 ```
