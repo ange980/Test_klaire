@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TYPEORM_CONNECTION=sqlite
+      - TYPEORM_DATABASE=/app/data/database.sqlite
+    depends_on:
+      - sqlite # Change this to point to sqlite service
+
+  sqlite:
+    image: hibitdev/sqlite:latest
+    container_name: sqlite
+    hostname: sqlite.hibit
+    ports:
+      - '8191:8191'
+    volumes:
+      - ./data:/app/db
+    command: ['tail', '-f', '/dev/null']
